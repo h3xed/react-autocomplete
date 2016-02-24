@@ -60,8 +60,6 @@ var Autocomplete = React.createClass({
 
   componentWillReceiveProps: function componentWillReceiveProps() {
     this._performAutoCompleteOnUpdate = true;
-
-    this.setState(value: this.props.initialValue || '');
   },
 
   componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
@@ -320,7 +318,7 @@ var Autocomplete = React.createClass({
           return _this7.handleKeyUp(event);
         },
         onClick: this.handleInputClick,
-        value: this.state.value
+        value: this.state.value || this.props.initialValue
       })),
       this.state.isOpen && this.renderMenu(),
       this.props.debug && React.createElement(
