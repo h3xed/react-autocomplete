@@ -60,6 +60,8 @@ var Autocomplete = React.createClass({
 
   componentWillReceiveProps: function componentWillReceiveProps() {
     this._performAutoCompleteOnUpdate = true;
+
+    this.setState(value: this.props.initialValue || '');
   },
 
   componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
